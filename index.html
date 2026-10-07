@@ -11,12 +11,14 @@
         name="description"
         content="Bluffer Style 23 - Soluciones digitales simples, modernas y adaptables."
     >
-   
-<link rel="stylesheet" href="static/css/style.css?v=2">
+    <meta name="theme-color" content="#f7f8fc">
+    <script src="static/js/script.js?v=3"></script>
+    <link rel="stylesheet" href="static/css/style.css?v=3">
 
 </head>
 
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
     <header class="navbar">
 
@@ -25,17 +27,21 @@
             <span class="logo-text">Bluffer Style — Martín Martínez García</span>
         </div>
 
-        <nav class="nav-links">
+        <nav class="nav-links" aria-label="Navegación principal">
             <a href="#inicio">Inicio</a>
             <a href="#servicios">Servicios</a>
             <a href="#proceso">Cómo trabajamos</a>
             <a href="#contacto">Contacto</a>
         </nav>
 
+        <button class="theme-toggle" type="button" aria-label="Activar modo nocturno" hidden>
+            <span class="theme-icon" aria-hidden="true">☾</span>
+        </button>
+
     </header>
 
 
-    <main>
+    <main id="contenido" tabindex="-1">
 
         <section id="inicio" class="hero">
 
@@ -297,7 +303,6 @@
     </footer>
 
 
-    <script src="static/js/script.js"></script>
 
 </body>
 
