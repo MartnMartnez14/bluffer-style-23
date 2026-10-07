@@ -152,8 +152,8 @@ section, main { scroll-margin-top: 20px; }
 .footer-bottom { max-width: 1140px; margin: 0 auto; padding-top: 20px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 13px; }
 .footer-bottom a { display: inline-flex; align-items: center; min-height: 44px; }
 
-/* Navigation toujours visible. En mobile elle défile avec la page,
-   afin de ne pas masquer le contenu lorsque les liens occupent plusieurs lignes. */
+/* Navegación siempre visible. En móvil se desplaza con la página
+   para no tapar el contenido cuando los enlaces ocupan varias líneas. */
 @media (max-width: 1100px) {
     .navbar { grid-template-columns: minmax(0, 1fr) 44px; gap: 8px 16px; }
     .logo { grid-column: 1; grid-row: 1; }
