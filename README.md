@@ -4,7 +4,7 @@
 
 Portfolio de **Martín Martínez García**: soluciones digitales simples, proyectos de programación, nutrición y tecnología. HTML, CSS y JavaScript vanilla, sin dependencias, fuentes externas ni proceso de compilación.
 
-> Esta modernización está entregada localmente. El enlace público puede seguir mostrando la versión anterior hasta que se publiquen estos commits.
+El sitio se publica mediante GitHub Pages desde la rama `main` y la carpeta raíz, con HTTPS.
 
 ## Mini tutorial sin conocimientos técnicos
 
@@ -52,7 +52,7 @@ Si cambia la paleta de fondo, actualizar también los valores de `theme-color` e
 
 La navegación móvil queda visible y se desplaza con la página para no tapar contenido. Solo la barra utiliza desenfoque opcional con fondo opaco de respaldo. No hay animaciones continuas; se respeta `prefers-reduced-motion`.
 
-La publicación sigue siendo estática: rama configurada en GitHub Pages y carpeta raíz. Conservar rutas relativas bajo `/bluffer-style-23/`. Esta entrega no modifica la configuración ni publica cambios.
+La publicación sigue siendo estática: rama configurada en GitHub Pages y carpeta raíz. Conservar rutas relativas bajo `/bluffer-style-23/`. Los cambios se publican al subir la rama `main`; GitHub Pages puede tardar unos minutos en actualizar la versión pública.
 
 ## Verificación local — 7 de octubre de 2026
 
@@ -66,4 +66,4 @@ La publicación sigue siendo estática: rama configurada en GitHub Pages y carpe
 - **Ko-fi devolvió HTTP 403** a la consulta automatizada. Se conserva el enlace original; su disponibilidad visual no quedó verificada.
 - Correo validado como enlace `mailto:`; no se comprobó entrega. WhatsApp conserva el número nacional y elimina el cero local: `https://wa.me/59898053913`. No se verificó la titularidad ni se enviaron mensajes, pagos o formularios.
 
-Las pruebas de navegador se ejecutaron en Chrome de escritorio con tamaños móviles simulados. Firefox, Edge y teléfonos físicos no se probaron directamente. El diseño utiliza características estándar con fallbacks; la publicación y sus posibles cachés quedan fuera de esta entrega local.
+Las pruebas de navegador se ejecutaron en Chrome de escritorio con tamaños móviles simulados. Firefox, Edge y teléfonos físicos no se probaron directamente. El diseño utiliza características estándar con fallbacks. Los resultados anteriores corresponden a la verificación local; la publicación se comprueba por separado.
