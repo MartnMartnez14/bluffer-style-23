@@ -1,69 +1,77 @@
 # Bluffer Style 23
 
-**[Abrir el sitio público](https://martnmartnez14.github.io/bluffer-style-23/)**
+**[Abrir el portfolio público](https://martnmartnez14.github.io/bluffer-style-23/)**
 
-Portfolio de **Martín Martínez García**: soluciones digitales simples, proyectos de programación, nutrición y tecnología. HTML, CSS y JavaScript vanilla, sin dependencias, fuentes externas ni proceso de compilación.
-
-El sitio se publica mediante GitHub Pages desde la rama `main` y la carpeta raíz, con HTTPS.
+Portfolio personal de **Martín Martínez García (Bluffer)**, desde Canelones, Uruguay. Proyectos de programación, bienestar, videojuegos y creatividad, con una identidad pastel suave y temas claro y oscuro. HTML, CSS y JavaScript, sin dependencias, fuentes externas ni compilación.
 
 ## Mini tutorial sin conocimientos técnicos
 
-1. Abrí el sitio desde una computadora o un celular.
-2. Usá el menú para recorrer Servicios, Proyectos, Cómo trabajamos y Contacto.
-3. En Proyectos, **Ver proyecto** abre la aplicación y **Código** abre su repositorio. MediLocal es una aplicación local y ofrece acceso al código.
-4. El botón de sol/luna cambia el tema. La primera visita sigue el tema del dispositivo y la elección manual se recuerda en el navegador.
-5. Podés contactar por correo o WhatsApp. Los apoyos de Ko-fi y Prex son voluntarios; Starlink conserva su enlace de afiliado.
+1. Abrí el enlace público desde tu computadora o celular.
+2. Conocé **Checklist Gato**, el proyecto destacado, o recorré los 15 proyectos.
+3. Elegí una categoría o escribí un nombre, tema o tecnología. Podés combinar ambos; la búsqueda ignora mayúsculas y tildes. Si no aparece nada, usá **Restablecer búsqueda y filtros**.
+4. **Explorar** abre la aplicación o su página de juego; **Código** lleva al repositorio. Los programas locales y prototipos sin demo pública ofrecen su código.
+5. Usá el botón de luna/sol para cambiar el tema. La primera visita sigue tu dispositivo y tu elección manual se guarda cuando el navegador lo permite.
+6. En **Contacto** encontrás correo y WhatsApp. Ko-fi y Prex son apoyos voluntarios; el pie conserva el enlace de afiliado de Starlink.
 
-## Proyectos destacados y fuentes
+Sin JavaScript, el contenido, los 15 proyectos y sus enlaces siguen disponibles. Se ocultan los controles que necesitan JavaScript.
 
-Las descripciones y tecnologías se contrastaron con los README públicos de GitHub durante la planificación del 7 de octubre de 2026. Bluffer 23 Universo se consultó como referencia complementaria; ante diferencias se priorizó el repositorio actual.
+## Catálogo y fuentes
 
-| Proyecto | Código y fuente | Aplicación |
-| --- | --- | --- |
-| Peso Saludable | [README](https://github.com/MartnMartnez14/peso-saludable#readme) | [Abrir](https://martnmartnez14.github.io/peso-saludable/) |
-| HuellasUY | [README](https://github.com/MartnMartnez14/huellasuy#readme) | [Abrir](https://buerianiloba98.pythonanywhere.com/) |
-| MediLocal | [README](https://github.com/MartnMartnez14/medilocal#readme) | Aplicación local en Python y SQLite |
-| Seguridad Digital | [README](https://github.com/MartnMartnez14/cyberseguridad-mayores#readme) | [Abrir](https://martnmartnez14.github.io/cyberseguridad-mayores/) |
-| Agüita | [README](https://github.com/MartnMartnez14/aguita#readme) | [Abrir](https://martnmartnez14.github.io/aguita/) |
-| Mesa Serena | [README](https://github.com/MartnMartnez14/mesa-serena#readme) | [Abrir](https://martnmartnez14.github.io/mesa-serena/) |
+Contenido tomado como punto de partida de [Bluffer 23 Universo en Sites](https://bluffer-23-universo.bluffer23polita.chatgpt.site/), conservando su orden y omitiendo la tarjeta de este mismo portfolio. Los 15 README y las 10 páginas enlazadas de aplicaciones/juegos respondieron HTTP 200 el **16 de octubre de 2026**. Se contrastaron las descripciones y tecnologías con esos README; esto no equivale a probar todas las funciones de cada proyecto.
 
-[Bluffer 23 Universo](https://bluffer-23-universo.bluffer23polita.chatgpt.site/).
-Los proyectos de salud son educativos; no realizan diagnósticos ni sustituyen atención profesional.
+| Proyecto | Presentación | Fuente | Aplicación |
+| --- | --- | --- | --- |
+| Checklist Gato | App online · Destacado | [README](https://github.com/MartnMartnez14/checklist#readme) | [Abrir](https://checklistgato.com/) |
+| HuellasUY | App online | [README](https://github.com/MartnMartnez14/huellasuy#readme) | [Abrir](https://buerianiloba98.pythonanywhere.com/) |
+| Viborita Classic | Disponible en itch.io | [README](https://github.com/MartnMartnez14/viboritaclassic#readme) | [Abrir](https://martnmartnez14.itch.io/snake-plus-spanish) |
+| Go Offline | App online | [README](https://github.com/MartnMartnez14/go-offline#readme) | [Abrir](https://martnmartnez14.github.io/go-offline/) |
+| Mesa Serena | App educativa | [README](https://github.com/MartnMartnez14/mesa-serena#readme) | [Abrir](https://martnmartnez14.github.io/mesa-serena/) |
+| Entrenamiento Equino | Demo con datos ficticios | [README](https://github.com/MartnMartnez14/entrenamiento-equino#readme) | [Abrir](https://martnmartnez14.github.io/entrenamiento-equino/) |
+| Librería Nexus | Demo local | [README](https://github.com/MartnMartnez14/999libreriadigital#readme) | Código y uso local |
+| Mi Primera Huerta | App educativa | [README](https://github.com/MartnMartnez14/mi-primera-huerta#readme) | [Abrir](https://martnmartnez14.github.io/mi-primera-huerta/) |
+| Pesos saludables | App educativa | [README](https://github.com/MartnMartnez14/peso-saludable#readme) | [Abrir](https://martnmartnez14.github.io/peso-saludable/) |
+| Agüita | App online | [README](https://github.com/MartnMartnez14/aguita#readme) | [Abrir](https://martnmartnez14.github.io/aguita/) |
+| MediLocal | Programa local | [README](https://github.com/MartnMartnez14/medilocal#readme) | Código y uso local |
+| Seguridad Digital | Web educativa | [README](https://github.com/MartnMartnez14/cyberseguridad-mayores#readme) | [Abrir](https://martnmartnez14.github.io/cyberseguridad-mayores/) |
+| Ashen Oath | Juego local | [README](https://github.com/MartnMartnez14/Ashen-Oath-Game#readme) | Código y uso local |
+| Pokétipos offline | Proyecto offline | [README](https://github.com/MartnMartnez14/poketipos-offline-18#readme) | Código y uso local |
+| Comentarios en YouTube | Prototipo local | [README](https://github.com/MartnMartnez14/extension-chrome-youtube-comentarios-colores#readme) | Código y uso local |
 
-## Abrir la versión local
+Los proyectos de salud ofrecen información educativa general; no realizan diagnósticos ni sustituyen atención profesional. La composición de notas del destacado es una ilustración en HTML/CSS, identificada como tal, sin capturas ni datos reales de usuarios.
 
-Podés abrir `index.html` directamente. Para comprobar la página en un origen HTTP estable con Python ya disponible:
+## Abrir localmente
+
+Podés abrir `index.html` directamente, sin instalar nada. Si ya tenés Python y preferís un servidor local:
 
 ```sh
 python3 app.py
 ```
 
-Abrí `http://127.0.0.1:8000`. Detené el servidor con Ctrl+C. `app.py` es solo una herramienta local; GitHub Pages no necesita Python ni backend. `requirements.txt` está vacío: no hace falta instalar paquetes.
+Abrí `http://127.0.0.1:8000` y detené el servidor con Ctrl+C. Python solo sirve la vista local; el sitio público es estático y no tiene backend. `requirements.txt` permanece vacío.
 
 ## Mantenimiento
 
-- `index.html`: textos, navegación, tarjetas, contactos y metadatos. Las tarjetas son HTML estático y funcionan sin JavaScript. Al agregar una, comprobar su README, tecnologías y URL real; no inventar una demo.
-- `static/css/style.css`: variables del tema claro en `:root` y nocturno en `[data-theme="dark"]`, estilos compartidos y tamaños responsive. Los acentos de proyecto son decorativos.
-- `static/js/script.js`: inicialización del tema y selector. Se carga antes del CSS para reducir el destello del tema incorrecto.
+- `index.html`: textos, metadatos, contactos y tarjetas estáticas. Cada tarjeta usa `data-category` con una de estas categorías: Herramientas, Bienestar, Juegos o Comunidad. Al cambiar el catálogo, actualizar también el contador inicial y este README.
+- `static/css/style.css`: paletas en `:root` y `[data-theme="dark"]`, composiciones gráficas y adaptación a pantallas. Sin imágenes o fuentes externas. No hay animaciones continuas y se respeta `prefers-reduced-motion`.
+- `static/js/script.js`: tema, búsqueda, filtros combinados, contador y estado vacío. El script se carga antes del CSS para aplicar el tema temprano; las tarjetas no se generan con JavaScript.
 
-El tema usa `bluffer-style-23-theme` en `localStorage`, con valores `light` o `dark`. Preferencias ausentes o inválidas siguen `prefers-color-scheme`; cambios del sistema se aplican hasta una elección manual. Si el almacenamiento está bloqueado, la elección funciona durante la visita pero no se puede garantizar persistencia. Para volver al tema automático, borrar esa clave desde las herramientas del navegador o los datos del sitio.
+El tema conserva la clave `bluffer-style-23-theme` y los valores `light`/`dark`. Una preferencia válida tiene prioridad sobre `prefers-color-scheme`; sin elección manual se siguen los cambios del sistema. Si el almacenamiento falla, el selector sigue funcionando durante la visita. Borrar esa clave permite volver a la preferencia automática.
 
-Si cambia la paleta de fondo, actualizar también los valores de `theme-color` en el script y su valor inicial en HTML. Tras editar CSS o JS, incrementar sus parámetros `?v=` para evitar versiones antiguas en caché.
+Al cambiar la paleta, actualizar también `theme-color` en HTML y JavaScript. Al publicar cambios de CSS/JS, incrementar `?v=` en sus enlaces. No se añaden cuentas, analítica, cookies de seguimiento ni sincronización del catálogo. Los enlaces externos llevan a servicios con sus propias condiciones.
 
-La navegación móvil queda visible y se desplaza con la página para no tapar contenido. Solo la barra utiliza desenfoque opcional con fondo opaco de respaldo. No hay animaciones continuas; se respeta `prefers-reduced-motion`.
+Las anclas antiguas `#servicios` y `#proceso` apuntan a la presentación personal para conservar enlaces compartidos. Se mantienen `#inicio`, `#proyectos`, `#contacto` y `#contenido`.
 
-La publicación sigue siendo estática: rama configurada en GitHub Pages y carpeta raíz. Conservar rutas relativas bajo `/bluffer-style-23/`. Los cambios se publican al subir la rama `main`; GitHub Pages puede tardar unos minutos en actualizar la versión pública.
+## Verificación — 16 de octubre de 2026
 
-## Verificación local — 7 de octubre de 2026
+- Navegador integrado de Codex: cinco anchos simulados, **320, 375, 768, 1024 y 1440 px**, en claro y oscuro; corregido el desbordamiento decorativo en móvil.
+- Búsqueda real de `AGUITA` dentro de Bienestar: un resultado. Cambio a Juegos: estado vacío. Restablecer: 15 tarjetas y foco en la búsqueda. Cambio de tema y recarga: preferencia conservada.
+- **212 elementos con texto comprobados por tema**, sin resultados inferiores a 4,5:1; mínimo medido **4,81:1 en claro y 5,27:1 en oscuro**. Es una comprobación de paleta, no una auditoría integral WCAG.
+- Pruebas aisladas del script con Node ya disponible: filtros, tildes, mayúsculas, contador, estado vacío, restablecer/foco, preferencia guardada, sistema y almacenamiento bloqueado. HTML inspeccionado para confirmar que las tarjetas no dependen de JavaScript.
+- Inspección de foco visible, enlace para saltar al contenido, botón de tema de 44 × 44 px y regla de movimiento reducido. Sin errores de consola observados durante las interacciones.
+- Verificación estructural de enlaces internos, identificadores únicos, recursos locales, sintaxis JavaScript y diferencias sin errores de espacios.
 
-- **70 comprobaciones con Playwright ya disponible y Chrome instalado**: ambos temas a 320, 375, 768, 1024 y 1440 px, seis tarjetas, ausencia de desbordamiento y recortes, navegación interna y destinos sin quedar detrás de la barra.
-- Primera visita según sistema, cambio manual, recarga, otra pestaña y nueva sesión con almacenamiento conservado; seguimiento del sistema y prioridad manual.
-- Preferencia inválida, almacenamiento bloqueado, contenido sin JavaScript y selector oculto cuando no está operativo.
-- Enlace para saltar al contenido por teclado, control de 44 × 44 px, movimiento reducido y fondo opaco sin desenfoque.
-- **41 comprobaciones de contraste** de colores de texto sobre superficies y extremos de gradientes de botones: mínimo medido **5,54:1**. Esto verifica la paleta, no constituye una auditoría integral de conformidad WCAG.
-- Capturas revisadas en claro y nocturno, escritorio y móvil; sintaxis JavaScript válida, HTML con etiquetas equilibradas e identificadores únicos, recursos relativos existentes y `git diff --check` sin errores. No se detectaron errores JavaScript de página durante las pruebas.
-- GitHub, los seis repositorios, las cinco aplicaciones públicas, Starlink y la redirección de WhatsApp respondieron **HTTP 200**. Es una comprobación de disponibilidad, no una garantía de todas las funciones de esos servicios.
-- **Ko-fi devolvió HTTP 403** a la consulta automatizada. Se conserva el enlace original; su disponibilidad visual no quedó verificada.
-- Correo validado como enlace `mailto:`; no se comprobó entrega. WhatsApp conserva el número nacional y elimina el cero local: `https://wa.me/59898053913`. No se verificó la titularidad ni se enviaron mensajes, pagos o formularios.
+No se probaron teléfonos físicos, lectores de pantalla, Safari, Firefox ni Edge. El caso sin JavaScript y el almacenamiento bloqueado se verificaron por inspección/pruebas aisladas, no mediante una sesión completa de navegador con esas restricciones. No se enviaron mensajes, formularios ni pagos para comprobar los contactos y apoyos.
 
-Las pruebas de navegador se ejecutaron en Chrome de escritorio con tamaños móviles simulados. Firefox, Edge y teléfonos físicos no se probaron directamente. El diseño utiliza características estándar con fallbacks. Los resultados anteriores corresponden a la verificación local; la publicación se comprueba por separado.
+## Publicación
+
+GitHub Pages publica la rama `main` y la carpeta raíz, con rutas relativas compatibles con `/bluffer-style-23/`. La actualización conserva la URL pública actual y no modifica el sitio de Sites. GitHub Pages puede tardar unos minutos en reflejar un commit nuevo.
