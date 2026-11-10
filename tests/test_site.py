@@ -9,22 +9,35 @@ CSS = (ROOT / "static" / "css" / "style.css").read_text(encoding="utf-8")
 JS = (ROOT / "static" / "js" / "script.js").read_text(encoding="utf-8")
 
 CARDS = re.findall(r'<article class="project-card[^"]*".*?</article>', HTML, re.S)
-NUMBERS = [re.search(r'class="project-number">\s*(\d+)', c).group(1) for c in CARDS]
+NUMBERS = [
+    match.group(1) if (match := re.search(r'class="project-number">\s*(\d+)', card)) else ""
+    for card in CARDS
+]
 
 
-class CatalogoTest(unittest.TestCase):
+class Base(unittest.TestCase):
+    """Aserciones con mensaje corto: un fallo no vuelca el archivo entero."""
+
+    def has(self, needle, haystack=HTML):
+        self.assertTrue(needle in haystack, f"falta: {needle}")
+
+    def has_not(self, needle, haystack=HTML):
+        self.assertFalse(needle in haystack, f"no debería estar: {needle}")
+
+
+class CatalogoTest(Base):
     def test_hay_22_proyectos(self):
-        self.assertEqual(len(CARDS), 22)
+        self.assertEqual(len(CARDS), 22, "se esperaban 22 tarjetas")
 
     def test_numeracion_correlativa(self):
         self.assertEqual(NUMBERS, [f"{i:02d}" for i in range(1, 23)])
 
     def test_extension_es_la_tarjeta_02(self):
-        self.assertIn("YT Temporal Comments", CARDS[1])
-        self.assertIn("data-featured=\"true\"", CARDS[1])
+        self.has("YT Temporal Comments", CARDS[1])
+        self.has('data-featured="true"', CARDS[1])
 
     def test_contador_coincide(self):
-        self.assertIn("22 proyectos para explorar", HTML)
+        self.has("22 proyectos para explorar")
 
     def test_enlaces_de_proyectos_nuevos(self):
         for url in (
@@ -32,29 +45,29 @@ class CatalogoTest(unittest.TestCase):
             "https://martnmartnez14.github.io/catalogo-comercios/",
             "https://martnmartnez14.github.io/inac-carnes-infografia/",
         ):
-            self.assertIn(url, HTML)
+            self.has(url)
 
     def test_no_quedan_datos_viejos(self):
         for viejo in ("outlook.com", "59898053913", "Soy Martín,", "estudiante de Nutrición."):
-            self.assertNotIn(viejo, HTML)
+            self.has_not(viejo)
 
 
-class ContactoTest(unittest.TestCase):
+class ContactoTest(Base):
     def test_correo_hotmail(self):
         self.assertGreaterEqual(HTML.count("mmartinez23bio@hotmail.com"), 3)
-        self.assertIn('href="mailto:mmartinez23bio@hotmail.com"', HTML)
+        self.has('href="mailto:mmartinez23bio@hotmail.com"')
 
     def test_whatsapp_correcto(self):
-        self.assertIn('href="https://wa.me/59892663680"', HTML)
-        self.assertIn("092 663 680", HTML)
+        self.has('href="https://wa.me/59892663680"')
+        self.has("092 663 680")
 
     def test_formacion_profesional(self):
-        self.assertIn("nivel profesional", HTML)
+        self.has("nivel profesional")
 
 
-class ApoyoTest(unittest.TestCase):
+class ApoyoTest(Base):
     def test_seccion_apoyar(self):
-        self.assertIn('id="apoyar"', HTML)
+        self.has('id="apoyar"')
 
     def test_medios_de_apoyo(self):
         for dato in (
@@ -64,27 +77,27 @@ class ApoyoTest(unittest.TestCase):
             "35502",
             "1006269736963",
         ):
-            self.assertIn(dato, HTML)
+            self.has(dato)
 
     def test_botones_copiar_validos(self):
         copias = re.findall(r'data-copy="([^"]*)"', HTML)
         self.assertGreaterEqual(len(copias), 4)
-        self.assertTrue(all(c.strip() for c in copias))
+        self.assertTrue(all(c.strip() for c in copias), "hay un data-copy vacío")
         self.assertEqual(len(copias), len(re.findall(r'class="copy"', HTML)))
 
 
-class EstiloTest(unittest.TestCase):
+class EstiloTest(Base):
     def test_modo_dia_es_purpura_claro(self):
         bloque = CSS.split(':root[data-theme="light"]')[1].split("}")[0]
-        self.assertIn("--accent: #cbb6ff", bloque)
-        self.assertNotIn("#d7ff3f", bloque)
+        self.has("--accent: #cbb6ff", bloque)
+        self.has_not("#d7ff3f", bloque)
 
     def test_version_de_assets(self):
-        self.assertIn("style.css?v=6", HTML)
-        self.assertIn("script.js?v=6", HTML)
+        self.has("style.css?v=6")
+        self.has("script.js?v=6")
 
     def test_javascript_de_copiar(self):
-        self.assertIn("initCopy", JS)
+        self.has("initCopy", JS)
 
 
 if __name__ == "__main__":
