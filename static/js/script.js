@@ -4,7 +4,7 @@
 
     var root = document.documentElement;
     var storageKey = "bluffer-style-23-theme";
-    var colors = { dark: "#0b0c0a", light: "#f3f2e9" };
+    var colors = { dark: "#08090b", light: "#f4f2ee" };
     var button = null;
     var theme = "dark";
     var saved = null;
