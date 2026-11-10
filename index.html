@@ -13,9 +13,12 @@
 <meta name="theme-color" content="#08090b">
 <script src="static/js/script.js?v=6">
 </script>
-<link rel="stylesheet" href="static/css/style.css?v=6">
+<script src="static/js/motion.js?v=1" defer>
+</script>
+<link rel="stylesheet" href="static/css/style.css?v=7">
 </head>
 <body>
+<canvas id="bg-field" class="bg-field" aria-hidden="true"></canvas>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <header class="navbar" id="navbar">
 <a class="brand" href="#inicio">
@@ -33,6 +36,7 @@
 <button class="theme-toggle" type="button" hidden aria-label="Activar modo claro">
 <span class="theme-icon" aria-hidden="true">☀</span>
 </button>
+<canvas id="nav-terrain" class="nav-terrain" aria-hidden="true"></canvas>
 </header>
 <main id="contenido">
 <section class="hero wrap" id="inicio">
@@ -594,6 +598,7 @@ un té y <em>seguimos explorando?</em> <span class="support-emoji" aria-hidden="
 <small>El beneficio promocional depende de las condiciones vigentes.</small>
 </p>
 </div>
+<canvas id="ripple-footer" class="footer-ripples" aria-hidden="true"></canvas>
 </div>
 <div class="sticker-strip" aria-hidden="true">
 <span>ChatGPT</span><span>Python</span><span>PWA</span><span>Offline</span><span>Nutrición</span><span>Hecho en UY</span><span>Chrome</span><span>Bluffer 23</span>
