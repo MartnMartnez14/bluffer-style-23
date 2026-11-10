@@ -93,11 +93,48 @@ class EstiloTest(Base):
         self.has_not("#d7ff3f", bloque)
 
     def test_version_de_assets(self):
-        self.has("style.css?v=6")
+        self.has("style.css?v=7")
         self.has("script.js?v=6")
 
     def test_javascript_de_copiar(self):
         self.has("initCopy", JS)
+
+
+class MovimientoTest(Base):
+    def test_canvases_presentes(self):
+        for ident in ("bg-field", "nav-terrain", "ripple-footer"):
+            self.has(f'id="{ident}"')
+            self.assertRegex(
+                HTML,
+                rf'<canvas[^>]*id="{ident}"[^>]*aria-hidden="true"',
+                f"el canvas {ident} debe ser decorativo",
+            )
+
+    def test_script_de_movimiento(self):
+        self.has('<script src="static/js/motion.js?v=1" defer>')
+        self.assertTrue((ROOT / "static" / "js" / "motion.js").exists(), "falta motion.js")
+
+    def test_motion_respeta_accesibilidad_y_rendimiento(self):
+        motion = (ROOT / "static" / "js" / "motion.js").read_text(encoding="utf-8")
+        for aguja in (
+            "prefers-reduced-motion",
+            "requestAnimationFrame",
+            "visibilitychange",
+            "devicePixelRatio",
+            "IntersectionObserver",
+        ):
+            self.assertTrue(aguja in motion, f"falta en motion.js: {aguja}")
+        for prohibido in ("innerHTML", "document.write", "eval("):
+            self.assertTrue(prohibido not in motion, f"no usar {prohibido} en motion.js")
+
+    def test_css_de_la_capa(self):
+        self.has("#bg-field {", CSS)
+        self.has(".nav-terrain {", CSS)
+        self.has(".footer-ripples {", CSS)
+        self.has("html {", CSS)
+
+    def test_version_css_7(self):
+        self.has("style.css?v=7")
 
 
 if __name__ == "__main__":
