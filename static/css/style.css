@@ -1614,11 +1614,11 @@ footer {
 
 @media (max-width: 640px) {
     .navbar {
-        padding-bottom: 12px;
+        padding-bottom: 16px;
     }
 
     .nav-terrain {
-        height: 18px;
+        height: 12px;
     }
 
     .footer-ripples {
