@@ -52,6 +52,7 @@
         initProjects();
         initReveal();
         initNavbar();
+        initCopy();
     });
 
     function normalize(value) {
@@ -129,6 +130,21 @@
         }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
 
         items.forEach(function (item) { observer.observe(item); });
+
+        // Salto por ancla: los elementos que quedaron arriba del viewport nunca
+        // intersectan, así que se revelan al detectar que ya pasaron.
+        function revealPassed() {
+            items.forEach(function (item) {
+                if (item.classList.contains("is-visible")) return;
+                if (item.getBoundingClientRect().bottom < window.innerHeight * 0.4) {
+                    item.classList.add("is-visible");
+                    observer.unobserve(item);
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealPassed, { passive: true });
+        revealPassed();
     }
 
     function initNavbar() {
@@ -141,5 +157,69 @@
 
         onScroll();
         window.addEventListener("scroll", onScroll, { passive: true });
+    }
+
+    function initCopy() {
+        var buttons = Array.from(document.querySelectorAll("[data-copy]"));
+        var status = document.getElementById("copy-status");
+        if (!buttons.length) return;
+
+        function announce(message) {
+            if (status) status.textContent = message;
+        }
+
+        function legacyCopy(text) {
+            var area = document.createElement("textarea");
+            area.value = text;
+            area.setAttribute("readonly", "");
+            area.style.position = "fixed";
+            area.style.top = "-1000px";
+            document.body.appendChild(area);
+            area.select();
+            var ok = false;
+            try {
+                ok = document.execCommand("copy");
+            } catch (error) {
+                ok = false;
+            }
+            document.body.removeChild(area);
+            return ok;
+        }
+
+        function mark(button, label) {
+            var original = button.dataset.label || button.textContent;
+            button.dataset.label = original;
+            button.dataset.copied = "true";
+            button.textContent = label;
+            window.setTimeout(function () {
+                button.dataset.copied = "false";
+                button.textContent = original;
+            }, 2000);
+        }
+
+        buttons.forEach(function (button) {
+            var value = (button.dataset.copy || "").trim();
+            if (!value) return;
+            button.addEventListener("click", function () {
+                function done() {
+                    mark(button, "Copiado ✓");
+                    announce("Copiado: " + value);
+                }
+
+                function fallback() {
+                    if (legacyCopy(value)) {
+                        done();
+                    } else {
+                        announce("No se pudo copiar. Seleccioná el dato y copialo a mano.");
+                    }
+                }
+
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(value).then(done, fallback);
+                } else {
+                    fallback();
+                }
+            });
+        });
     }
 }());
