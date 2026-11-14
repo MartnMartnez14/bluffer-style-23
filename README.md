@@ -22,7 +22,7 @@ Los 15 proyectos originales conservan sus textos, enlaces y categorías (la tarj
 | # | Proyecto | Categoría | Estado | Enlaces |
 | --- | --- | --- | --- | --- |
 | 01 | Checklist Gato | Herramientas | App online · Destacado | [Abrir](https://checklistgato.com/) · [Código](https://github.com/MartnMartnez14/checklist) |
-| 02 | YT Temporal Comments | Herramientas | Extensión Chrome · MV3 | [Código](https://github.com/MartnMartnez14/extension-chrome-youtube-comentarios-colores) |
+| 02 | YT Temporal Comments | Herramientas | Extensión Chrome · MV3 | [Código](https://github.com/MartnMartnez14/yt-temporal-comments) |
 | 03 | HuellasUY | Comunidad | App online | [Abrir](https://buerianiloba98.pythonanywhere.com/) · [Código](https://github.com/MartnMartnez14/huellasuy) |
 | 04 | Viborita Classic | Juegos | Disponible en itch.io | [Abrir](https://martnmartnez14.itch.io/snake-plus-spanish) · [Código](https://github.com/MartnMartnez14/viboritaclassic) |
 | 05 | Go Offline | Juegos | App online | [Abrir](https://martnmartnez14.github.io/go-offline/) · [Código](https://github.com/MartnMartnez14/go-offline) |
