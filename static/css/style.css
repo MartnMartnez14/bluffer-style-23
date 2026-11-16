@@ -11,6 +11,10 @@
     --accent-text: #d7ff3f;
     --accent-2: #cbb6ff;
     --accent-2-text: #cbb6ff;
+    --book: #ffc46b;
+    --book-2: #ff8fc0;
+    --book-text: #ffc46b;
+    --on-book: #1a130a;
     --on-accent: #0b0c0a;
     --focus: #d7ff3f;
     --grain-opacity: 0.05;
@@ -35,6 +39,10 @@
     --accent-text: #4a2f8f;
     --accent-2: #e7dcff;
     --accent-2-text: #4a2f8f;
+    --book: #b06e12;
+    --book-2: #a8336f;
+    --book-text: #8a5206;
+    --on-book: #fff8ef;
     --on-accent: #17121f;
     --focus: #4a2f8f;
     --grain-opacity: 0.03;
@@ -492,6 +500,178 @@ em {
     color: var(--muted);
 }
 
+/* Libro: acento ámbar para separarlo de los proyectos informáticos */
+
+.book-feature {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(32px, 5vw, 64px);
+    align-items: center;
+    padding: clamp(24px, 4vw, 48px);
+    border: 1px solid color-mix(in srgb, var(--book) 38%, var(--line));
+    border-radius: var(--radius-frame);
+    background:
+        radial-gradient(120% 100% at 88% 0%, color-mix(in srgb, var(--book) 12%, transparent), transparent 62%),
+        linear-gradient(160deg, color-mix(in srgb, var(--book-2) 8%, transparent), transparent 48%),
+        var(--surface);
+    overflow: hidden;
+}
+
+.book-feature > * {
+    min-width: 0;
+}
+
+.book-copy h2 {
+    margin-bottom: 18px;
+    font-size: clamp(1.9rem, 4.2vw, 3.3rem);
+    line-height: 1.04;
+}
+
+.book-copy h2 em {
+    color: var(--book-text);
+}
+
+.book-copy > p:not(.eyebrow):not(.fine) {
+    max-width: 54ch;
+    font-size: 1.08rem;
+    color: var(--muted);
+}
+
+.book-list li::before {
+    color: var(--book-text);
+}
+
+.book-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin: 0;
+    padding: 26px 0 8px;
+    perspective: 1100px;
+    isolation: isolate;
+}
+
+/* Halo holográfico que acompaña la portada. */
+.book-visual::before {
+    content: "";
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    z-index: -1;
+    width: min(360px, 82%);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--book), var(--book-2), var(--accent-2), #7be0c9, var(--book));
+    filter: blur(52px);
+    opacity: 0.32;
+    transform: translate(-50%, -50%);
+    animation: book-glow 18s linear infinite;
+}
+
+@keyframes book-glow {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.book-cover {
+    position: relative;
+    width: min(276px, 78%);
+    border-radius: 6px;
+    transform: rotateY(-7deg) rotateX(2deg);
+    transform-style: preserve-3d;
+    box-shadow:
+        0 26px 55px -30px rgba(0, 0, 0, 0.95),
+        0 0 0 1px color-mix(in srgb, var(--book) 26%, transparent),
+        0 0 42px -18px color-mix(in srgb, var(--book) 55%, transparent);
+    transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.55s ease;
+}
+
+.book-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* Brillo que recorre la portada al pasar el mouse. */
+.book-cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    background: linear-gradient(115deg, transparent 34%, rgba(255, 255, 255, 0.42) 50%, transparent 66%);
+    background-size: 260% 100%;
+    background-position: 120% 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, background-position 0.9s ease;
+}
+
+.book-cover:hover,
+.book-cover:focus-within {
+    transform: rotateY(0) rotateX(0) translateY(-8px) scale(1.02);
+    box-shadow:
+        0 34px 60px -30px rgba(0, 0, 0, 0.95),
+        0 0 0 1px color-mix(in srgb, var(--book) 45%, transparent),
+        0 0 60px -14px color-mix(in srgb, var(--book) 70%, transparent);
+}
+
+.book-cover:hover::after,
+.book-cover:focus-within::after {
+    opacity: 1;
+    background-position: -40% 0;
+}
+
+.book-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--book);
+    color: var(--on-book);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform: translateX(-50%);
+}
+
+.book-visual figcaption {
+    max-width: 34ch;
+    margin: 0;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.book-cta {
+    background: var(--book);
+    border-color: var(--book);
+    color: var(--on-book);
+}
+
+.book-cta:hover {
+    color: var(--on-book);
+}
+
+@media (max-width: 1024px) {
+    .book-feature {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .book-visual {
+        padding-top: 34px;
+    }
+}
+
 /* Destacado */
 
 .featured {
@@ -919,6 +1099,39 @@ input[type="search"]:focus-visible {
     font-weight: 700;
     text-decoration: underline;
     text-decoration-thickness: 1px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 20px;
+    margin-bottom: 18px;
+}
+
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+}
+
+.linkedin-link:hover {
+    border-bottom-color: var(--accent-text);
+}
+
+.linkedin-tag {
+    padding: 2px 8px;
+    border: 1px solid var(--accent-2);
+    border-radius: 999px;
+    color: var(--accent-2-text);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .support {

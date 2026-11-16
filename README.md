@@ -2,16 +2,17 @@
 
 **[Abrir el portfolio público](https://martnmartnez14.github.io/bluffer-style-23/)**
 
-Portfolio personal de **Martín Martínez García (Bluffer)**, desde Canelones, Uruguay. Proyectos de programación, bienestar, comercios, videojuegos y creatividad, con una identidad editorial oscura, acento lima y un segundo acento púrpura; el modo claro usa púrpura claro. HTML, CSS y JavaScript vanilla, sin dependencias, fuentes externas, imágenes externas ni compilación.
+Portfolio personal de **Martín Martínez García (Bluffer)**, desde Canelones, Uruguay. Proyectos de programación, bienestar, comercios, videojuegos y creatividad, con una identidad editorial oscura, acento lima y un segundo acento púrpura; el modo claro usa púrpura claro. El libro **GNOSTICISMO, la verdad más allá del velo** abre la página con un acento ámbar propio. HTML, CSS y JavaScript vanilla, sin dependencias, fuentes externas ni compilación; la única imagen es la portada local del libro.
 
 ## Mini tutorial sin conocimientos técnicos
 
 1. Abrí el enlace público desde tu computadora o celular.
 2. El sitio abre en **tema oscuro**. Usá el botón ☀ / ☾ de la barra superior para cambiar a modo claro (púrpura claro) o volver al oscuro.
-3. Conocé **Checklist Gato**, el proyecto destacado, después **YT Temporal Comments** (la extensión de Chrome) y recorré los 22 proyectos del archivo.
-4. Elegí una categoría (Todos, Herramientas, Bienestar, Comercios, Juegos, Comunidad) o escribí un nombre, tema o tecnología. Podés combinar ambos; la búsqueda ignora mayúsculas y tildes. Si no aparece nada, usá **Restablecer búsqueda y filtros**.
-5. **Explorar** abre la aplicación, demo o página del juego; **Código** lleva al repositorio. Los programas locales y prototipos sin demo pública ofrecen solo su código.
-6. En **Apoyar** están Ko-fi, PayPal, el referido de Starlink, Prex y Mercado Pago, cada dato con su botón **Copiar**. En **Contacto** están el correo y el WhatsApp del negocio.
+3. Lo primero es el **libro**: *GNOSTICISMO, la verdad más allá del velo*, con su portada y el enlace a Wrixy. Está marcado **En publicación** porque todavía se suman plataformas y falta el enlace de Amazon.
+4. Después conocé **Checklist Gato**, el proyecto destacado, **YT Temporal Comments** (la extensión de Chrome) y recorré los 22 proyectos del archivo.
+5. Elegí una categoría (Todos, Herramientas, Bienestar, Comercios, Juegos, Comunidad) o escribí un nombre, tema o tecnología. Podés combinar ambos; la búsqueda ignora mayúsculas y tildes. Si no aparece nada, usá **Restablecer búsqueda y filtros**.
+6. **Explorar** abre la aplicación, demo o página del juego; **Código** lleva al repositorio. Los programas locales y prototipos sin demo pública ofrecen solo su código.
+7. En **Apoyar** están Ko-fi, PayPal, el referido de Starlink, Prex y Mercado Pago, cada dato con su botón **Copiar**. En **Contacto** están el correo, el WhatsApp del negocio y el **LinkedIn** con el CV, los estudios y las certificaciones.
 
 Sin JavaScript, el contenido, los 22 proyectos y sus enlaces siguen disponibles. Se ocultan los controles que necesitan JavaScript (filtros, buscador, botón de tema y botones de copiar).
 
@@ -61,18 +62,19 @@ Abrí `http://127.0.0.1:8000` y detené el servidor con Ctrl+C. Python solo sirv
 ## Mantenimiento
 
 - `index.html`: textos, metadatos, contactos y tarjetas estáticas. Cada tarjeta usa `data-category` con una de estas categorías exactas: **Herramientas, Bienestar, Comercios, Juegos o Comunidad**. Al agregar categorías, añadir también el botón de filtro correspondiente. El contador inicial (“22 proyectos para explorar”) y la numeración `01…22` deben actualizarse a mano si cambia el catálogo.
-- `static/css/style.css`: tokens en `:root` (tema oscuro, por defecto) y `:root[data-theme="light"]`. Tres capas visuales: encabezado pill flotante (`.navbar`), centro editorial (`.featured`, `.spotlight`, tarjetas) y pie tipo marco (`.site-footer`, `.footer-frame`, `.footer-wordmark`, `.sticker-strip`). Breakpoints: 1024 px (columnas simplificadas y su propio bloque al final del archivo), 760 px (una columna) y 640 px (navegación en una fila con scroll horizontal). El revelado (`.reveal`) solo oculta contenido si `html` tiene la clase `js`. Sin imágenes ni fuentes externas; el grano es un SVG inline.
+- Sección `#libro`: bloque propio antes del destacado, con `.book-feature`, la portada `static/img/gnosticismo-portada.jpg` (720×1152, copiada y comprimida desde la portada oficial de Google Play) y el enlace a Wrixy. Cuando salga el libro en Amazon, se agrega el enlace ahí y se quita la aclaración de “En publicación”.
+- `static/css/style.css`: tokens en `:root` (tema oscuro, por defecto) y `:root[data-theme="light"]`. Tres capas visuales: encabezado pill flotante (`.navbar`), centro editorial (`.featured`, `.spotlight`, tarjetas) y pie tipo marco (`.site-footer`, `.footer-frame`, `.footer-wordmark`, `.sticker-strip`). Breakpoints: 1024 px (columnas simplificadas y su propio bloque al final del archivo), 760 px (una columna) y 640 px (navegación en una fila con scroll horizontal). El revelado (`.reveal`) solo oculta contenido si `html` tiene la clase `js`. Sin fuentes externas; el grano es un SVG inline.
 - `static/js/script.js`: tema, búsqueda, filtros combinados, contador, estado vacío, revelado con IntersectionObserver (incluye los saltos por ancla), clase de navbar al hacer scroll y botones **Copiar** con respaldo `document.execCommand`. Se carga en `<head>` sin `defer` para aplicar el tema antes del CSS.
 - `static/js/motion.js`: tres escenas decorativas en canvas (fondo `#bg-field`, escalera de progreso `#nav-terrain`, ondas del pie `#ripple-footer`). Un solo `requestAnimationFrame`, DPR máximo 2, pausa con `visibilitychange`, respeta `prefers-reduced-motion` (dibuja un cuadro y no anima) y las ondas del pie solo se animan cuando el canvas está a la vista. El CSS debe mantener `html` con el color de fondo y `body` transparente para que el canvas quede detrás.
 - Al cambiar la paleta, las escenas leen `--ink`, `--line`, `--accent-2` y `--accent-2-text` en cada cambio de tema; no hay colores duplicados en el JavaScript. La opacidad del fondo se ajusta por tema al final de `style.css`.
 - Tema: clave de `localStorage` `bluffer-style-23-theme` con valores `light` o `dark`. Sin elección guardada, el sitio abre en oscuro (no sigue `prefers-color-scheme`). Si el almacenamiento falla, la elección dura la visita.
-- Paleta: oscuro `#08090b` con acento lima `#d7ff3f` y segundo acento púrpura `#cbb6ff`; claro `#f4f2ee` con acento púrpura claro `#cbb6ff` y texto de acento `#4a2f8f`.
+- Paleta: oscuro `#08090b` con acento lima `#d7ff3f` y segundo acento púrpura `#cbb6ff`; claro `#f4f2ee` con acento púrpura claro `#cbb6ff` y texto de acento `#4a2f8f`. El libro usa tokens aparte: `--book` (ámbar `#ffc46b` en oscuro, `#b06e12` en claro), `--book-2` (rosa) y `--on-book`, para que no se confunda con los proyectos.
 - `theme-color`: `#08090b` en el HTML por defecto; el script lo actualiza a `#f4f2ee` en modo claro. Si cambiás la paleta, actualizá ambos valores.
-- Cache: al publicar cambios de CSS o JS, incrementar `?v=` en los enlaces de `index.html` (actualmente `?v=7` para CSS, `?v=6` para `script.js` y `?v=1` para `motion.js`).
+- Cache: al publicar cambios de CSS o JS, incrementar `?v=` en los enlaces de `index.html` (actualmente `?v=8` para CSS, `?v=6` para `script.js` y `?v=1` para `motion.js`).
 - Sección `#apoyar`: los datos de apoyo (Ko-fi, PayPal, Starlink, Prex `35502`, Mercado Pago `1006269736963`) se editan en `index.html`. Cada botón `Copiar` necesita `data-copy` con el valor exacto.
 - Contraste: los pares de texto principales superan 4,5:1 en ambos temas (ver Verificación).
 
-Las anclas `#inicio`, `#extension`, `#proyectos`, `#destacado`, `#sobre-mi`, `#contacto`, `#apoyar`, `#ayuda` y `#contenido` son estables. Las anclas antiguas `#servicios` y `#proceso` se mantienen como destinos vacíos dentro de la sección personal para conservar enlaces compartidos.
+Las anclas `#inicio`, `#libro`, `#extension`, `#proyectos`, `#destacado`, `#sobre-mi`, `#contacto`, `#apoyar`, `#ayuda` y `#contenido` son estables. Las anclas antiguas `#servicios` y `#proceso` se mantienen como destinos vacíos dentro de la sección personal para conservar enlaces compartidos.
 
 ## Verificación
 
@@ -84,7 +86,7 @@ node --check static/js/script.js
 python3 -m py_compile app.py
 ```
 
-- `tests/test_site.py` (15 pruebas, sin dependencias): 22 tarjetas con numeración correlativa, extensión en la posición 02 y destacada, contador correcto, enlaces de las tres altas nuevas, ausencia de datos viejos (`outlook.com`, `59898053913`, “Soy Martín,”), correo y WhatsApp vigentes, formación profesional, sección `#apoyar` con Ko-fi, PayPal, Starlink, Prex y Mercado Pago, `data-copy` no vacíos y emparejados con `class="copy"`, acento púrpura en modo día y `?v=6`.
+- `tests/test_site.py` (28 pruebas, sin dependencias): 22 tarjetas con numeración correlativa, extensión en la posición 02 y destacada, contador correcto, enlaces de las tres altas nuevas, ausencia de datos viejos (`outlook.com`, `59898053913`, “Soy Martín,”), correo y WhatsApp vigentes, formación profesional, sección `#apoyar` con Ko-fi, PayPal, Starlink, Prex y Mercado Pago, `data-copy` no vacíos y emparejados con `class="copy"`, acento púrpura en modo día y `?v=8`. Las pruebas del libro verifican que `#libro` va antes de `#destacado` y `#extension`, el enlace a Wrixy con `rel="noopener"`, la portada local con `alt` y dimensiones, la marca “En publicación”, que no se inventa ningún enlace de Amazon y los estilos `--book`; las de LinkedIn, que el enlace aparece en el contacto y en el pie.
 - Conteo de 22 tarjetas desde el DOM y desde el archivo; una sola tarjeta `data-featured="true"`.
 - Navegador: sin desbordamiento horizontal (`scrollWidth === innerWidth`) en 1440 px y 390 px; encabezado de 1200 px en escritorio y 100 px de alto en móvil con la fila de navegación ajustada (352 px); el spotlight se apila en una columna; el botón **Copiar** muestra “Copiado ✓”, anuncia el valor en `#copy-status` y vuelve a “Copiar” a los 2 s (con `navigator.clipboard` simulado: el portapapeles real requiere permiso del usuario).
 - Contraste WCAG sobre los tokens: oscuro, texto `#f4f3ea` sobre `#08090b` 17,9:1, secundario `#b3b6bf` 9,8:1, acento `#d7ff3f` 17,3:1; claro, texto `#14131a` sobre `#f4f2ee` 16,5:1, secundario `#55525e` 6,8:1, acento de texto `#4a2f8f` 8,97:1, botón `#17121f` sobre `#cbb6ff` 10,2:1.

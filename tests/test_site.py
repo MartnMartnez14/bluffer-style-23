@@ -93,7 +93,7 @@ class EstiloTest(Base):
         self.has_not("#d7ff3f", bloque)
 
     def test_version_de_assets(self):
-        self.has("style.css?v=7")
+        self.has("style.css?v=8")
         self.has("script.js?v=6")
 
     def test_javascript_de_copiar(self):
@@ -134,7 +134,46 @@ class MovimientoTest(Base):
         self.has("html {", CSS)
 
     def test_version_css_7(self):
-        self.has("style.css?v=7")
+        self.has("style.css?v=8")
+
+
+class LibroTest(Base):
+    def test_seccion_de_libro_antes_de_los_proyectos(self):
+        self.has('id="libro"')
+        self.assertLess(HTML.index('id="libro"'), HTML.index('id="destacado"'))
+        self.assertLess(HTML.index('id="libro"'), HTML.index('id="extension"'))
+
+    def test_enlace_a_wrixy_con_url_seguro(self):
+        self.has('href="https://wrixy.app/book/qj2cnCIX" rel="noopener"')
+
+    def test_portada_local_con_alt_y_dimensiones(self):
+        self.assertRegex(
+            HTML,
+            r'<img src="static/img/gnosticismo-portada\.jpg" alt="[^"]*GNOSTICISMO[^"]*"'
+            r' width="720" height="1152"[^>]*>',
+        )
+        portada = ROOT / "static" / "img" / "gnosticismo-portada.jpg"
+        self.assertTrue(portada.exists(), "falta la portada del libro")
+        self.assertGreater(portada.stat().st_size, 20_000, "la portada parece vacía")
+
+    def test_marca_de_publicacion_en_curso(self):
+        self.has("En publicación")
+
+    def test_no_inventa_enlace_de_amazon(self):
+        self.assertNotIn("amazon.com/", HTML.lower())
+
+    def test_estilos_del_libro(self):
+        for aguja in (".book-feature {", ".book-cover {", ".book-badge {", "--book: #ffc46b"):
+            self.has(aguja, CSS)
+
+
+class LinkedInTest(Base):
+    def test_linkedin_en_contacto_y_pie(self):
+        self.assertGreaterEqual(HTML.count("https://www.linkedin.com/in/tipitincho/"), 2)
+
+    def test_linkedin_cerca_del_contacto(self):
+        contacto = HTML.split('id="contacto"')[1].split("</section>")[0]
+        self.assertIn("linkedin.com/in/tipitincho", contacto)
 
 
 if __name__ == "__main__":
