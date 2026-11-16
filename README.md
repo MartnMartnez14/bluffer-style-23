@@ -70,7 +70,7 @@ Abrí `http://127.0.0.1:8000` y detené el servidor con Ctrl+C. Python solo sirv
 - Tema: clave de `localStorage` `bluffer-style-23-theme` con valores `light` o `dark`. Sin elección guardada, el sitio abre en oscuro (no sigue `prefers-color-scheme`). Si el almacenamiento falla, la elección dura la visita.
 - Paleta: oscuro `#08090b` con acento lima `#d7ff3f` y segundo acento púrpura `#cbb6ff`; claro `#f4f2ee` con acento púrpura claro `#cbb6ff` y texto de acento `#4a2f8f`. El libro usa tokens aparte: `--book` (ámbar `#ffc46b` en oscuro, `#b06e12` en claro), `--book-2` (rosa) y `--on-book`, para que no se confunda con los proyectos.
 - `theme-color`: `#08090b` en el HTML por defecto; el script lo actualiza a `#f4f2ee` en modo claro. Si cambiás la paleta, actualizá ambos valores.
-- Cache: al publicar cambios de CSS o JS, incrementar `?v=` en los enlaces de `index.html` (actualmente `?v=8` para CSS, `?v=6` para `script.js` y `?v=1` para `motion.js`).
+- Cache: al publicar cambios de CSS o JS, incrementar `?v=` en los enlaces de `index.html` (actualmente `?v=9` para CSS, `?v=6` para `script.js` y `?v=1` para `motion.js`).
 - Sección `#apoyar`: los datos de apoyo (Ko-fi, PayPal, Starlink, Prex `35502`, Mercado Pago `1006269736963`) se editan en `index.html`. Cada botón `Copiar` necesita `data-copy` con el valor exacto.
 - Contraste: los pares de texto principales superan 4,5:1 en ambos temas (ver Verificación).
 

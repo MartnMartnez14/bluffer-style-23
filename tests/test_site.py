@@ -93,7 +93,7 @@ class EstiloTest(Base):
         self.has_not("#d7ff3f", bloque)
 
     def test_version_de_assets(self):
-        self.has("style.css?v=8")
+        self.has("style.css?v=9")
         self.has("script.js?v=6")
 
     def test_javascript_de_copiar(self):
@@ -134,7 +134,7 @@ class MovimientoTest(Base):
         self.has("html {", CSS)
 
     def test_version_css_7(self):
-        self.has("style.css?v=8")
+        self.has("style.css?v=9")
 
 
 class LibroTest(Base):
@@ -145,6 +145,8 @@ class LibroTest(Base):
 
     def test_enlace_a_wrixy_con_url_seguro(self):
         self.has('href="https://wrixy.app/book/qj2cnCIX" rel="noopener"')
+        self.has('href="https://martnmartnez14.github.io/libro-gnosticismo/" rel="noopener"')
+        self.has("book-holo-cta")
 
     def test_portada_local_con_alt_y_dimensiones(self):
         self.assertRegex(

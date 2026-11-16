@@ -661,6 +661,29 @@ em {
     color: var(--on-book);
 }
 
+.book-holo-cta {
+    background: linear-gradient(125deg, #ffc46b 0%, #ff8fc0 50%, #cbb6ff 100%);
+    border-color: color-mix(in srgb, var(--book) 72%, #ffffff);
+    color: #17111a;
+    font-weight: 700;
+    box-shadow: 0 8px 26px -6px rgba(255, 168, 140, 0.45);
+}
+
+.book-holo-cta:hover,
+.book-holo-cta:focus-visible {
+    color: #17111a;
+    background: linear-gradient(125deg, #ffd285 0%, #ffa3cb 50%, #d8c7ff 100%);
+    box-shadow: 0 10px 30px -4px rgba(255, 168, 140, 0.62);
+}
+
+:root[data-theme="light"] .book-holo-cta,
+:root[data-theme="light"] .book-holo-cta:hover,
+:root[data-theme="light"] .book-holo-cta:focus-visible {
+    background: linear-gradient(125deg, #ffd080 0%, #f79ac5 50%, #cbb6ff 100%);
+    border-color: #8a5206;
+    color: #17111a;
+}
+
 @media (max-width: 1024px) {
     .book-feature {
         grid-template-columns: minmax(0, 1fr);
