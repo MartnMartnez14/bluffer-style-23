@@ -36,6 +36,16 @@ class CatalogoTest(Base):
         self.has("YT Temporal Comments", CARDS[1])
         self.has('data-featured="true"', CARDS[1])
 
+    def test_extension_publicada_en_chrome_web_store(self):
+        url = "https://chromewebstore.google.com/detail/bjklhbialpidkbpdbelenkpminijkibb"
+        self.has(url, CARDS[1])
+        self.has("Chrome Web Store · v1.0.0", CARDS[1])
+        extension = HTML.split('id="extension"')[1].split("</section>")[0]
+        self.assertIn(url, extension, "la sección debe enlazar a la ficha oficial")
+        self.assertIn("Versión 1.0.0", extension)
+        self.has_not("En preparación para la Chrome Web Store")
+        self.has_not("0.4.1")
+
     def test_contador_coincide(self):
         self.has("22 proyectos para explorar")
 
@@ -160,6 +170,10 @@ class LibroTest(Base):
 
     def test_marca_de_publicacion_en_curso(self):
         self.has("En publicación")
+        for plataforma in ("Amazon", "Apple Books (iTunes)", "Barnes &amp; Noble", "Kobo"):
+            self.has(plataforma)
+        self.has_not("href=\"https://www.barnesandnoble.com")
+        self.has_not("href=\"https://www.kobo.com")
 
     def test_no_inventa_enlace_de_amazon(self):
         self.assertNotIn("amazon.com/", HTML.lower())
