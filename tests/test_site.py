@@ -103,7 +103,7 @@ class EstiloTest(Base):
         self.has_not("#d7ff3f", bloque)
 
     def test_version_de_assets(self):
-        self.has("style.css?v=9")
+        self.has("style.css?v=10")
         self.has("script.js?v=6")
 
     def test_javascript_de_copiar(self):
@@ -144,7 +144,7 @@ class MovimientoTest(Base):
         self.has("html {", CSS)
 
     def test_version_css_7(self):
-        self.has("style.css?v=9")
+        self.has("style.css?v=10")
 
 
 class LibroTest(Base):
@@ -158,6 +158,32 @@ class LibroTest(Base):
         self.has('href="https://martnmartnez14.github.io/libro-gnosticismo/" rel="noopener"')
         self.has("book-holo-cta")
 
+    def test_boton_de_amazon_es_el_principal(self):
+        """Amazon es el canal principal: botón propio, más grande que el de Wrixy."""
+        self.has('href="https://www.amazon.es/dp/B0H4X4X14W" rel="noopener"')
+        self.has('href="https://www.amazon.com.mx/dp/B0H4X4X14W" rel="noopener"')
+        self.assertIn("B0H4X4X14W", HTML)
+        self.has("book-amazon-cta")
+        self.has("book-cta-sm")
+        # Amazon aparece antes que Wrixy en los botones del libro
+        self.assertLess(
+            HTML.index("book-amazon-cta"),
+            HTML.index('href="https://wrixy.app/book/qj2cnCIX"'),
+        )
+        # El botón de Amazon es más alto y con texto más grande que el chico
+        def bloque(patron, nombre):
+            encontrado = re.search(patron, CSS, re.S)
+            self.assertIsNotNone(encontrado, f"falta la regla {nombre}")
+            assert encontrado is not None
+            return encontrado.group(1)
+
+        bloque_amazon = bloque(r"\.book-amazon-cta \{(.*?)\}", ".book-amazon-cta")
+        bloque_chico = bloque(r"\.book-cta-sm \{(.*?)\}", ".book-cta-sm")
+        self.assertIn("min-height: 58px", bloque_amazon)
+        self.assertIn("font-size: 1.05rem", bloque_amazon)
+        self.assertIn("flex: 1 1 100%", bloque_amazon)
+        self.assertIn("font-size: 0.82rem", bloque_chico)
+
     def test_portada_local_con_alt_y_dimensiones(self):
         self.assertRegex(
             HTML,
@@ -169,14 +195,17 @@ class LibroTest(Base):
         self.assertGreater(portada.stat().st_size, 20_000, "la portada parece vacía")
 
     def test_marca_de_publicacion_en_curso(self):
-        self.has("En publicación")
-        for plataforma in ("Amazon", "Apple Books (iTunes)", "Barnes &amp; Noble", "Kobo"):
+        self.has("Publicado en Amazon")
+        self.has("Próximamente")
+        for plataforma in ("Apple Books (iTunes)", "Barnes &amp; Noble", "Kobo"):
             self.has(plataforma)
-        self.has_not("href=\"https://www.barnesandnoble.com")
-        self.has_not("href=\"https://www.kobo.com")
+        self.has_not("En publicación")
+        self.has_not("El enlace de Amazon todavía no está disponible")
 
     def test_no_inventa_enlace_de_amazon(self):
-        self.assertNotIn("amazon.com/", HTML.lower())
+        self.assertIn("https://www.amazon.es/dp/B0H4X4X14W", HTML)
+        self.assertIn("https://www.amazon.com.mx/dp/B0H4X4X14W", HTML)
+        self.has_not("href=\"https://www.amazon.es/dp/ASIN\"")
 
     def test_estilos_del_libro(self):
         for aguja in (".book-feature {", ".book-cover {", ".book-badge {", "--book: #ffc46b"):

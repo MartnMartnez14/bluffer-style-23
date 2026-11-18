@@ -661,6 +661,32 @@ em {
     color: var(--on-book);
 }
 
+.book-amazon-cta {
+    flex: 1 1 100%;
+    min-height: 58px;
+    padding: 16px 24px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    background: linear-gradient(125deg, var(--book) 0%, #ff9f5a 100%);
+    border-color: var(--book);
+    color: var(--on-book);
+    box-shadow: 0 14px 34px -12px rgba(255, 170, 90, 0.6);
+}
+
+.book-amazon-cta:hover,
+.book-amazon-cta:focus-visible {
+    color: var(--on-book);
+    background: linear-gradient(125deg, #ffd07a 0%, #ffab6b 100%);
+    box-shadow: 0 18px 40px -12px rgba(255, 170, 90, 0.75);
+}
+
+.book-cta-sm {
+    min-height: 38px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
 .book-holo-cta {
     background: linear-gradient(125deg, #ffc46b 0%, #ff8fc0 50%, #cbb6ff 100%);
     border-color: color-mix(in srgb, var(--book) 72%, #ffffff);
