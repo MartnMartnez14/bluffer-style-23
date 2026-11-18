@@ -1675,6 +1675,32 @@ footer {
     text-transform: uppercase;
 }
 
+.spotlight-shot {
+    margin: 0 0 20px;
+}
+
+.spotlight-shot img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin-inline: auto;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--accent-2) 45%, var(--line));
+    box-shadow: 0 22px 44px -30px rgba(0, 0, 0, 0.9);
+}
+
+.spotlight-shot figcaption {
+    margin-top: 10px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 .spotlight-badge ul {
     margin: 0;
     padding-left: 18px;

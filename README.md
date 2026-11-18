@@ -2,7 +2,7 @@
 
 **[Abrir el portfolio público](https://martnmartnez14.github.io/bluffer-style-23/)**
 
-Portfolio personal de **Martín Martínez García (Bluffer)**, desde Canelones, Uruguay. Proyectos de programación, bienestar, comercios, videojuegos y creatividad, con una identidad editorial oscura, acento lima y un segundo acento púrpura; el modo claro usa púrpura claro. El libro **GNOSTICISMO, la verdad más allá del velo** abre la página con un acento ámbar propio. HTML, CSS y JavaScript vanilla, sin dependencias, fuentes externas ni compilación; la única imagen es la portada local del libro.
+Portfolio personal de **Martín Martínez García (Bluffer)**, desde Uruguay. Proyectos de programación, bienestar, comercios, videojuegos, creatividad, filosofía y lectura, con una identidad editorial oscura, acento lima y un segundo acento púrpura; el modo claro usa púrpura claro. El libro **GNOSTICISMO, la verdad más allá del velo** abre la página con un acento ámbar propio. HTML, CSS y JavaScript vanilla, sin dependencias, fuentes externas ni compilación; las imágenes locales son la portada del libro y una captura de la extensión YT Temporal Comments.
 
 ## Mini tutorial sin conocimientos técnicos
 

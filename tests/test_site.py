@@ -58,7 +58,7 @@ class CatalogoTest(Base):
             self.has(url)
 
     def test_no_quedan_datos_viejos(self):
-        for viejo in ("outlook.com", "59898053913", "Soy Martín,", "estudiante de Nutrición."):
+        for viejo in ("outlook.com", "59898053913", "Soy Martín,", "estudiante de Nutrición.", "Canelones"):
             self.has_not(viejo)
 
 
@@ -103,7 +103,7 @@ class EstiloTest(Base):
         self.has_not("#d7ff3f", bloque)
 
     def test_version_de_assets(self):
-        self.has("style.css?v=10")
+        self.has("style.css?v=11")
         self.has("script.js?v=6")
 
     def test_javascript_de_copiar(self):
@@ -144,7 +144,19 @@ class MovimientoTest(Base):
         self.has("html {", CSS)
 
     def test_version_css_7(self):
-        self.has("style.css?v=10")
+        self.has("style.css?v=11")
+
+
+class ExtensionVisualTest(Base):
+    def test_captura_local_de_la_extension(self):
+        self.assertRegex(
+            HTML,
+            r'<img src="static/img/yt-temporal-comments\.png" alt="[^"]+"'
+            r' width="400" height="484"[^>]*>',
+        )
+        captura = ROOT / "static" / "img" / "yt-temporal-comments.png"
+        self.assertTrue(captura.exists(), "falta la captura de la extensión")
+        self.assertGreater(captura.stat().st_size, 20_000, "la captura parece vacía")
 
 
 class LibroTest(Base):
