@@ -166,7 +166,7 @@ class LibroTest(Base):
         self.assertLess(HTML.index('id="libro"'), HTML.index('id="extension"'))
 
     def test_enlace_a_wrixy_con_url_seguro(self):
-        self.has('href="https://wrixy.app/book/qj2cnCIX" rel="noopener"')
+        self.has('href="https://wrixy.app/book/NoXSw7tI" rel="noopener"')
         self.has('href="https://martnmartnez14.github.io/libro-gnosticismo/" rel="noopener"')
         self.has("book-holo-cta")
 
@@ -180,7 +180,7 @@ class LibroTest(Base):
         # Amazon aparece antes que Wrixy en los botones del libro
         self.assertLess(
             HTML.index("book-amazon-cta"),
-            HTML.index('href="https://wrixy.app/book/qj2cnCIX"'),
+            HTML.index('href="https://wrixy.app/book/NoXSw7tI"'),
         )
         # El botón de Amazon es más alto y con texto más grande que el chico
         def bloque(patron, nombre):
